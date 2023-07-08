@@ -5,11 +5,8 @@
  * @returns {string[]}
  */
 export function sortStrings(arr, param = 'asc') {
-  let result = new Array();
   arr.sort((a, b) => a.localeCompare(b, ['ru', 'en'], {usage: 'sort', sensitivity: 'variant', caseFirst: 'upper', localeMatcher: 'best fit' }));
-  for (let value of arr) {
-    result.push(value);
-  }
+  let result = Object.assign([], arr);
   if (param === 'asc') {
     return result;
   } else {
